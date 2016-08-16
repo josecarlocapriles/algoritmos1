@@ -1,0 +1,67 @@
+#include "stdafx.h"
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+int contar(){
+	int a, c=0;
+	do {
+		cout<<"Introduzca el numero: "<<endl;
+		cin>>a;
+		if (a<=0){
+			cout<<"Valor Invalido"<<endl;
+		}
+	} while (a<=0);
+	while (a>0){
+		a=a/10;
+		c++;
+	}
+	return c;
+}
+int sumar(){
+	int a, b, s=0;
+	do {
+		cout<<"Introduzca el numero: "<<endl;
+		cin>>a;
+		if (a<=0){
+			cout<<"Valor Invalido"<<endl;
+		}
+	} while (a<=0);
+	while (a>0){
+		b=a%10;
+		a=a/10;
+		s=s+b;
+	}
+	return s;
+}
+void main() {
+	int opcion,a;
+	do{
+		cout<<"TAREA 1: ALGORITMOS Y PROGRAMACION I"<<endl<<endl;
+		cout<<"1. Calcular Digitos de un Numero"<<endl;
+		cout<<"2. Sumar Digitos de un Numero"<<endl;
+		cout<<"3. Salir del Programa"<<endl;
+		cout<<"Ingrese Opcion"<<endl;
+		cin>>opcion;
+		switch (opcion){
+		case 1:{
+			a=contar();
+			cout<<"El numero tiene "<<a<<" digitos"<<endl<<endl;
+			_getch();
+			break;
+			   }
+		case 2:{
+			a=sumar();
+			cout<<"La suma de los digitos es: "<<a<<endl<<endl;
+			_getch();
+			break;
+			   }
+		case 3:break;
+		default:
+			cout<<"Valor Invalido"<<endl;
+			break;
+		}
+	}while(opcion!=3);
+	cout<<"Gracias";
+	_getch();
+}
